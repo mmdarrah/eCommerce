@@ -1,0 +1,17 @@
+{
+    "people": [
+      {
+        "id": 1,
+        "name": "Batfem",
+        "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/bat-fem.png?raw=true",
+        "skills": 5,
+        "brain": 15,
+        "gadget": 10,
+        "heart": 15
+      }
+  
+      
+      
+    ]
+  }
+  
