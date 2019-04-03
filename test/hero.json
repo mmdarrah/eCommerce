@@ -1,0 +1,213 @@
+{
+  "people": [
+    {
+      "name": "Batfem",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/bat-fem.png?raw=true",
+      "stringth": 5,
+      "skills": 5,
+      "brain": 15,
+      "gadget": 10,
+      "heart": 15
+    },
+
+    {
+      "name": "Batman",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/batman.png?raw=true",
+      "stringth": 2,
+      "skills": 18,
+      "brain": 20,
+      "gadget": 5,
+      "heart": 5
+    },
+
+    {
+      "name": "CaptainMarvel",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/captainmarvel-fem.png?raw=true",
+      "stringth": 20,
+      "skills": 5,
+      "brain": 2,
+      "gadget": 3,
+      "heart": 20
+    },
+
+    {
+      "name": "Fire fem",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/fire-fem.png?raw=true",
+      "stringth": 1,
+      "skills": 2,
+      "brain": 3,
+      "gadget": 10,
+      "heart": 35
+    },
+
+    {
+      "name": "Flash Man",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/flash-man.png?raw=true",
+      "stringth": 1,
+      "skills": 2,
+      "brain": 3,
+      "gadget": 10,
+      "heart": 35
+    },
+
+    {
+      "name": "GreenBoy",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/greenBoy.png?raw=true",
+      "stringth": 10,
+      "skills": 10,
+      "brain": 10,
+      "gadget": 10,
+      "heart": 10
+    },
+
+    {
+      "name": "Greeniron Man",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/greeniron-man.png?raw=true",
+      "stringth": 5,
+      "skills": 5,
+      "brain": 30,
+      "gadget": 5,
+      "heart": 5
+    },
+
+    {
+      "name": "GreyYellow",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/greyYellow.png?raw=true",
+      "stringth": 10,
+      "skills": 10,
+      "brain": 10,
+      "gadget": 19,
+      "heart": 1
+    },
+
+    {
+      "name": "Gun Fem",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/gun-fem.png?raw=true",
+      "stringth": 20,
+      "skills": 5,
+      "brain": 2,
+      "gadget": 3,
+      "heart": 20
+    },
+
+    {
+      "name": "Hammer Fem",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/hammer-fem.png?raw=true",
+      "stringth": 10,
+      "skills": 10,
+      "brain": 10,
+      "gadget": 10,
+      "heart": 10
+    },
+
+    {
+      "name": "Knife Fem",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/knife-fem.png?raw=true",
+      "stringth": 5,
+      "skills": 5,
+      "brain": 30,
+      "gadget": 5,
+      "heart": 5
+    },
+
+    {
+      "name": "RedBlue Fem",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/redBlue-fem.png?raw=true",
+      "stringth": 1,
+      "skills": 2,
+      "brain": 3,
+      "gadget": 10,
+      "heart": 35
+    },
+
+    {
+      "name": "Shadow Man",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/shadow-man.png?raw=true",
+      "stringth": 1,
+      "skills": 2,
+      "brain": 3,
+      "gadget": 10,
+      "heart": 35
+    },
+
+    {
+      "name": "SheHulk",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/sheHulk.png?raw=true",
+      "stringth": 20,
+      "skills": 5,
+      "brain": 2,
+      "gadget": 3,
+      "heart": 20
+    },
+
+    {
+      "name": "Smasher",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/smasher.png?raw=true",
+      "stringth": 5,
+      "skills": 5,
+      "brain": 15,
+      "gadget": 10,
+      "heart": 15
+    },
+
+    {
+      "name": "Smooooke",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/smoke.png?raw=true",
+      "stringth": 10,
+      "skills": 10,
+      "brain": 10,
+      "gadget": 19,
+      "heart": 1
+    },
+
+    {
+      "name": "Superman",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/superman.png?raw=true",
+      "stringth": 10,
+      "skills": 10,
+      "brain": 10,
+      "gadget": 19,
+      "heart": 1
+    },
+
+    {
+      "name": "Timberman",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/timber-man.png?raw=true",
+      "stringth": 10,
+      "skills": 10,
+      "brain": 10,
+      "gadget": 19,
+      "heart": 1
+    },
+
+    {
+      "name": "TwoBun",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/twoBun.png?raw=true",
+      "stringth": 20,
+      "skills": 5,
+      "brain": 2,
+      "gadget": 3,
+      "heart": 20
+    },
+
+    {
+      "name": "WondWom",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/wondWom.png?raw=true",
+      "stringth": 10,
+      "skills": 10,
+      "brain": 10,
+      "gadget": 19,
+      "heart": 1
+    },
+
+    {
+      "name": "Wrest man",
+      "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/wrest-man.png?raw=true",
+      "stringth": 20,
+      "skills": 5,
+      "brain": 2,
+      "gadget": 3,
+      "heart": 20
+    }
+  ]
+}

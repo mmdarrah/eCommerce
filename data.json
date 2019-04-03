@@ -1,13 +1,121 @@
 {
-    "people": [
+    "items": [
       {
         "id": 1,
-        "name": "Batfem",
-        "image": "https://github.com/mmdarrah/SuperHero4rent/blob/images/img-profile-thumb/thumb/bat-fem.png?raw=true",
-        "skills": 5,
-        "brain": 15,
-        "gadget": 10,
-        "heart": 15
+        "name": "Ananas",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "45 cm",
+        "origin": "Nederländerna",
+        "info": "Lättskött, exotisk planta med många smala blad och en dekorativ ananasfrukt på en stängel. Trivs i ljust läge, undvik direkt sol. Vill alltid ha lite vatten i bladrosetten.",
+        "price": 200
+      },
+
+      {
+        "id": 2,
+        "name": "Aqua",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "15 cm",
+        "origin": "Nederländerna",
+        "info": "Vacker undervattensväxt, mycket lättskött och snabbväxande. Mycket fin i glasskål, akvarium eller damm. Trivs i ljust läge. Ej vinterhärdig ute.",
+        "price": 499
+      },
+
+      {
+        "id": 3,
+        "name": "Citronfikus",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "70 cm",
+        "origin": "Danmark",
+        "info": "En vacker växt med blanka, små gröna blad. Lättskött alternativ till en bonsai. Trivs i ljust till halvskuggigt läge. Vattnas då jorden nästan torkat upp, ungefär en gång i veckan.",
+        "price": 175
+      },
+
+      {
+        "id": 4,
+        "name": "Fiolfikus grenad",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "135 cm",
+        "origin": "Danmark",
+        "info": "Trendig växt med fiolformade, glänsande, stora blad. Kompakt sort. Trivs i riktigt ljust läge, undvik dock direkt sol. Vattnas då jorden nästan torkat upp, ca en gång i veckan.",
+        "price": 499
+      },
+
+      {
+        "id": 5,
+        "name": "Förmakspalm",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "100 cm",
+        "origin": "Spanien",
+        "info": "Elegant, skulptural palm med parbladiga gröna blad som stadigt växer sig större med smala bladspetsar. Tålig och lättskött. Trivs i ljust läge. Vattnas då jorden nästan torkat upp.",
+        "price": 275
+      },
+
+      {
+        "id": 6,
+        "name": "Guldpalm",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "120 cm",
+        "origin": "Nederländerna",
+        "info": "Lättskött och populär palm med vackra blad. Bra luftfuktare och luftrenare. Trivs i ljusa till halvskuggiga lägen, utan direkt sol. Vattnas när jorden fortfarande är fuktig.",
+        "price": 599
+      },
+
+      {
+        "id": 7,
+        "name": "Monstera",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "55 cm",
+        "origin": "Nederländerna",
+        "info": "Trendig, karaktärsfull växt som utvecklar vackert flikade blad. Trivs i ljust läge, men även en bit in i rummet. Vattnas då jorden nästan torkat upp, ungefär en gång i veckan.",
+        "price": 120
+      },
+
+      {
+        "id": 8,
+        "name": "Olivträd",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "19 cm",
+        "origin": "Italien",
+        "info": "Tidlöst och populärt träd som odlats sedan forntiden. Har smala, läderartade blad, karaktäristiskt grågröna. Trivs i sol-halvskugga i väldränerad jord, gärna utomhus sommartid.",
+        "price": 149
+      },
+
+      {
+        "id": 9,
+        "name": "Strandkastanj",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "200 cm",
+        "origin": "Danmark",
+        "info": "Skulpturalt träd med en dekorativ, vacker stam och eleganta blad på långa bladstjälkar. Trivs i ljust läge, gärna i sol, undvik dock södersol. Vattnas då jorden nästan torkat upp.",
+        "price": 599
+      },
+
+      {
+        "id": 10,
+        "name": "Citrusträd",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "21 cm",
+        "origin": "Italien",
+        "info": "Härligt citronträd med ovala, glansiga blad och vita väldoftande blommor. Ätliga, riktiga citroner. Trivs i ljust läge, även i direkt sol, i väldränerad jord med lågt pH.",
+        "price": 425
+      },
+      {
+        "id": 11,
+        "name": "Citrusträd",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "21 cm",
+        "origin": "Italien",
+        "info": "Härligt citronträd med ovala, glansiga blad och vita väldoftande blommor. Ätliga, riktiga citroner. Trivs i ljust läge, även i direkt sol, i väldränerad jord med lågt pH.",
+        "price": 425
+      },
+      {
+        "id": 12,
+        "name": "Citrusträd",
+        "image": "https://github.com/mmdarrah/eCommerce/blob/master/image/Ananas.jpg?raw=true",
+        "height": "21 cm",
+        "origin": "Italien",
+        "info": "Härligt citronträd med ovala, glansiga blad och vita väldoftande blommor. Ätliga, riktiga citroner. Trivs i ljust läge, även i direkt sol, i väldränerad jord med lågt pH.",
+        "price": 425
       }
   
       
