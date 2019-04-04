@@ -62,16 +62,22 @@ xhttp.onreadystatechange = function() {
       let basketOutput = "";
       for (let i = 0; i < cart.length; i++) {
         basketOutput += ` 
-        
-        <li>${cart[i].name} <input  id="num" type="number" name="quantity" min="1" max="10">
-        ${cart[i].price}"<span><i class="fas fa-trash-alt"></i></span></li>
-        
+                    
+              <tr>
+                <td>${cart[i].name}</td>
+                <td>${cart[i].price}</td> 
+                <td><input  id="num" type="number" name="quantity" min="1" max="10"></td>
+                <td><span><i class="fas fa-trash-alt"></i></span></td>
+              </tr>
+       
         
         `;
       }
+      let delBtn = document.getElementById("delBtn");
       let basketList = document.getElementById("basket");
       if (basketList != null) {
         basketList.innerHTML = basketOutput;
+        delBtn.removeAttribute("style")
       }
     }
   }
@@ -112,7 +118,7 @@ $(document).ready(function() {
 
 
   
-  $("button").on("click", function() {
+  $("button#add").on("click", function() {
     
     let parent = $(this).siblings("h5");
     
@@ -145,4 +151,39 @@ $(document).ready(function() {
       localStorage.setItem("basket", cart);
     }
   });
+
+
+
+
+  /* remove items from lista */
+
+  $(".table").on("click", "span", function () {
+
+    let removItem = $(this).parents('tr').fadeOut(500, function () {
+      $(this).remove();
+      localStorage.removeItem(removItem);
+    });
+  })
+
+  $('.removeAll').on('click', function () {
+    localStorage.removeItem('basket');
+
+    location.reload();
+    
+  });
+
+
+  /* Total price */
+
+
+/* Buy btn */
+
+  $("#buyBtn").on("click", function () {
+    
+    $("#alert").removeAttr("style")
+    localStorage.removeItem('basket')
+
+    location.reload();
+  })
+
 }); //Ready
