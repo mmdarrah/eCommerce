@@ -1,25 +1,55 @@
-var xhttp = new XMLHttpRequest();
+
+
+
+
+
+let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     let response = JSON.parse(xhttp.responseText);
     let items = response.items;
 
     let output = "";
-
+    
+    
+    
     for (let i = 0; i < items.length; i++) {
-      output += ` <div class='col-md-4'  >
+      output += ` <div id="img" class='col-md-4'  >
         <IMG src= 
-        ${items[i].image} class="card-img-top" 
-        > 
+        ${items[i].image} class="card-img-top">
         <div class="card-body"  >
         <h5 class="card-title" >${items[i].name}</h5>
         <p class="card-text">Diameter: ${items[i].height}</p>
         <p class="card-text">Ursprung: ${items[i].origin}</p>
-        <p class="card-text"><h5>${items[i].price}:-</h5></p>
-        <button type="button" class="btn btn-success btn-lg btn-block btn-sm">Köpa</button>
+        <h5 style="display: none;">${
+        items[i].id}</h5><input  id="num" type="number" name="quantity" min="1" max="10">
+        <p class="card-text"><h5>${items[i].price}</h5></p>
+        <button type="button" id="add" class="btn btn-success btn-lg btn-block btn-sm">Köpa</button>
         </div>
         </div>`;
+
+
     }
+    
+      function loadItems() {
+        let allItems = [];
+        for (let i = 0; i < items.length; i++) {
+          allItems.push({
+            id: items[i].id,
+            name: items[i].name,
+            image: items[i].image,
+            price: items[i].price,
+            
+          })
+          
+        }
+        
+        return allItems
+
+
+      }
+    /* console.log(loadItems()); */
+    
 
     let list = document.getElementById("list");
     if (list != null) {
@@ -31,13 +61,13 @@ xhttp.onreadystatechange = function() {
       cart = JSON.parse(cart);
       let basketOutput = "";
       for (let i = 0; i < cart.length; i++) {
-        basketOutput += ` <div class='col-md-4'  >
->
-        <h5 class="card-title" >${cart[i].name}</h5>
+        basketOutput += ` 
         
-        <p class="card-text"><h5>${cart[i].price}</h5></p>
-        </div>
-        </div>`;
+        <li>${cart[i].name} <input  id="num" type="number" name="quantity" min="1" max="10">
+        ${cart[i].price}"<span><i class="fas fa-trash-alt"></i></span></li>
+        
+        
+        `;
       }
       let basketList = document.getElementById("basket");
       if (basketList != null) {
@@ -49,39 +79,70 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", "data.json", true);
 xhttp.send();
 
-/* (function(){
-  const cartInfo = document.getElementById('cart-info');
-  const cart = document.getElementById('cart');
 
-  cartInfo.addEventListener('click', function(){
-    cart.classList.toggle('show-cart');
-  });
-})();
- */
+/* let quantity = $("input").val()
+    console.log(quantity); */
 
 /* jQuery start here */
+/* $(document.body).on('click', '.add', function () {
+        const cardElem = $(this).closest('.card'),
+            id = parseInt(cardElem.data('id')),
+            quantity = parseInt(cardElem.find('.quantity').val());
+
+        addToCart(id, quantity);
+        fillCart();
+    }); */
 $(document).ready(function() {
+
+  /* $("button").on('click', '.num', function () {
+    let cardElem = $(this).closest('input')
+    
+      quantity = parseInt(cardElem.find('.quantity').val());
+    console.log(quantity);
+
+  }) */
+
+
+  
+   /* $("button").on('click', function () {
+     let quantity = $(".add").val()
+    console.log(quantity);
+  })  */
+  
+
+
+  
   $("button").on("click", function() {
+    
     let parent = $(this).siblings("h5");
-    console.log("Selected Product");
+    
+    /* console.log(parent); */
+    /* console.log(parent[2].innerHTML); */
+    /* 
     console.log(parent[0].innerText);
-    console.log(parent[1].innerText);
+    console.log(parent[1].innerText); */
+    
     let temp = localStorage.getItem("basket");
     if (temp != null) {
       let cart = JSON.parse(temp);
 
-      cart.push({ name: parent[0].innerText, price: parent[1].innerText });
+      cart.push({
+        name: parent[0].innerText,
+        id: parent[1].innerText,
+        price: parent[2].innerText
+        /* quantity: */
+      });
       cart = JSON.stringify(cart);
       localStorage.setItem("basket", cart);
     } else {
       let buyBasket = [];
       buyBasket.push({
         name: parent[0].innerText,
-        price: parent[1].innerText
+        id: parent[1].innerText,
+        price: parent[2].innerText 
       });
       let cart = JSON.stringify(buyBasket);
       localStorage.setItem("basket", cart);
     }
-    console.log(buyBasket);
   });
 }); //Ready

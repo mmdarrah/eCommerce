@@ -225,3 +225,24 @@ img{
     font-size: 1.75em;
 }
 
+.list{
+width: 40%;
+}
+
+ul {
+	list-style: none;
+	margin: 0 auto;
+    padding: 0;
+    
+}
+
+li  {
+	
+	padding: 0 0 20px 0;
+}
+
+span {
+    float: right;
+    
+	}
+
