@@ -235,5 +235,12 @@ padding-bottom: 50px;
 span {
     float: right;
     
-	}
+    }
+    
+
+    #totPrice{
+        display: inline;
+        position: relative;
+        left: 200px;
+    }
 

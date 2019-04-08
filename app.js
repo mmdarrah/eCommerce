@@ -23,7 +23,7 @@ xhttp.onreadystatechange = function () {
         <p class="card-text">Ursprung: ${items[i].origin}</p>
         <h5 style="display: none;">${
         items[i].id}</h5><input  id="num" type="number" name="quantity" min="1" max="10" value="1"></input>
-        <p class="card-text"><h5>${items[i].price}</h5></p>
+        <p class="card-text"><h5>${items[i].price} Kr</h5></p>
         <button type="button" id="add" class="btn btn-success btn-lg btn-block btn-sm">Köpa</button>
         </div>
         </div>`;
@@ -46,14 +46,49 @@ xhttp.onreadystatechange = function () {
                     
               <tr>
                 <td><IMG style="width:80px;hight:auto;"src=
-                  ${items[i].image} class="card-img-top"></td>
+                  ${cart[i].image} class="card-img-top"></td>
                 <td>${cart[i].name}</td>
-                <td>${cart[i].price}</td> 
+                <td>${cart[i].price} kr</td> 
                 <td><input  id="num" type="number" name="quantity" min="1" max="10"></input></td>
-                <td><span><i class="fas fa-trash-alt"></i></span></td>
+                <td><a onclick="deleteItem(id) "href="#"><span><i class="fas fa-trash-alt"></i></span></a></td>
               </tr>
                `;
-      }
+
+               
+              }
+              
+             /* Total price start*/
+
+            let cartPrice = localStorage.getItem("basket");
+            if (cartPrice != null) {
+              let total = [];
+
+
+            for (let i = 0; i < cart.length; i++) {
+              /* console.log(cart[i].price); */
+              total.push (cart[i].price);
+            }
+          /* console.log(total); */
+            
+            var result = total.map(function (x) {
+              return parseInt(x, 10);
+            });
+            /* console.log(result); */
+            const totSum = result.reduce(add);
+            function add(accumulator, a) {
+            return accumulator + a;
+            }
+            
+            /* console.log(totSum); */ 
+              let totResult = "Total price are: " + totSum + " kr"
+            let totalPrice = document.getElementById("total-price");
+              totalPrice.innerHTML = totResult;
+          }
+
+          /* Total price end */
+
+
+
 
 
 
@@ -70,11 +105,27 @@ xhttp.open("GET", "data.json", true);
 xhttp.send();
 
 
+/* Delete clicked item */
+
+/* function deleteItem(id){
+  console.log(id);
+  let cart = localStorage.getItem("basket");
+  cart = JSON.parse(cart);
+   for (let i = 0; i < cart.length; i++) { 
+    
+    
+     console.log(cart[i].id); 
 
 
+      if (cart[i].id === id){
+      console.log("test");
+      cart.splice(i, 1)
+       cart = JSON.stringify(cart);
+       localStorage.setItem("basket", cart);
 
-
-
+    }
+  }
+} */
 
 
 
@@ -106,28 +157,53 @@ $(document).ready(function () {
     console.log(parent[1].innerText); */
 
     let cartFromLocalStorage = localStorage.getItem("basket");
-
-
+    
     if (cartFromLocalStorage != null) {
-
+      
       // if we already have the cart in the local storage
-
-
-
+      
       let cart = JSON.parse(cartFromLocalStorage);
+
       /* console.log(cart); */
 
-      /* cart.forEach(id => {
-        if(id == null)
 
+      
 
-      }); */
+     
+      
+      
       //TODO
       //here you need to check if the id exist in the list
-
+      
       //if exists then get the item there should be a function in javescript that removes an item
       //from a list and then you should calculate the quanity
+            
+     /*  for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == null) {
 
+
+          cart.push({
+            name: parent[0].innerText,
+            id: parent[1].innerText,
+            price: parent[2].innerText,
+            image: imageSource,
+            quantity: inputValue
+
+          });
+
+       } else if (cart[i].id === parent[1].innerText) {
+
+         console.log("test");
+
+
+         let newQuan = (cart[i].quantity += cart.inputValue);
+
+         console.log(newQuan);
+          
+        }
+        
+      }
+ */
 
       cart.push({
         name: parent[0].innerText,
@@ -141,6 +217,7 @@ $(document).ready(function () {
 
       cart = JSON.stringify(cart);
       localStorage.setItem("basket", cart);
+      
           } 
           else {
       // if the local storage does not contain a cart
@@ -167,13 +244,13 @@ $(document).ready(function () {
 
   /* remove all items from basket */
 
-  $(".table").on("click", "span", function () {
+  /* $(".table").on("click", "span", function () {
 
     let removItem = $(this).parents('tr').fadeOut(500, function () {
       $(this).remove();
       localStorage.removeItem(removItem);
     });
-  })
+  }) */
 
   $('.removeAll').on('click', function () {
     localStorage.removeItem('basket');
@@ -198,7 +275,7 @@ $(document).ready(function () {
 
 
 
-  /* Total price */
+ 
 
 
 
