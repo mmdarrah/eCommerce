@@ -167,6 +167,19 @@ $(document).ready(function () {
         /* console.log(cart[i].id); */
         if (cart[i].id == clickId) {
           console.log("test");
+
+          let newQua = +cart[i].quantity + +inputValue
+
+          console.log(newQua);
+
+
+
+
+
+
+
+
+
         }
 
 
