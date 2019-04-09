@@ -46,14 +46,14 @@ xhttp.onreadystatechange = function () {
       for (let i = 0; i < cart.length; i++) {
         basketOutput += ` 
                     
-              <tr>
+              <tr id="num">
                 <td><IMG style="width:80px;hight:auto;"src=
                   ${cart[i].image} class="card-img-top"></td>
                 <td>${cart[i].name}</td>
                 <td>${cart[i].price} Kr</td> 
                 <td>${cart[i].quantity} st</td> 
-                <td><input  id="num" type="number" name="quantity" min="1" max="10"></input></td>
-                <td> <td><a id="${cart[i].id}"href="#"><span><i class="fas fa-trash-alt"></i></span></a></td></td>
+                <td><input  id="${cart[i].id}" type="number" name="quantity" min="1" max="10"></input></td>
+                <td> <td><a "href="#"><span><i class="fas fa-trash-alt"></i></span></a></td></td>
               </tr>
        
         
@@ -117,6 +117,7 @@ $(document).ready(function () {
 
     let parent = $(this).siblings("h5");
     let image = $(this).parents().find("#img").children("img");
+   /*  console.log(image); */
     let imageSource = image[0].currentSrc;
     /* console.log(imageSource); */
     let allParents = $(this).siblings();
@@ -171,6 +172,7 @@ $(document).ready(function () {
 
           let newQua = +cart[i].quantity + +inputValue
           let newPrs = cart[i].price * newQua
+          
           cart.splice(i, 1); 
 
           /* console.log(newPrs); */
@@ -245,7 +247,7 @@ $(document).ready(function () {
   });
 
 
-  /* Total price */
+  
 
 
   /* Buy btn */
@@ -257,5 +259,56 @@ $(document).ready(function () {
 
     location.reload();
   })
+
+  
+  
+  $("#num").on("change",function(){
+    let $input = $(this).val()
+    /* console.log($input); */
+
+
+    let cartFromLocalStorage = localStorage.getItem("basket");
+    let cart = JSON.parse(cartFromLocalStorage);
+    let xId = $(this).children().find("input");
+    let clickId = xId[0].id;
+    console.log(clickId);
+
+    for (let i = 0; i < cart.length; i++) {
+      
+      if (cart[i].id == clickId) {
+    let newQua = +cart[i].quantity + +$input
+    let newPrs = cart[i].price * newQua
+
+    cart.splice(i, 1);
+
+    /* console.log(newPrs); */
+
+    /* this.quantity = newQua */
+
+    cart.push({
+
+      name: parent[0].innerText,
+      id: parent[1].innerText,
+      price: newPrs,
+      image: imageSource,
+      quantity: newQua
+
+    });
+
+    cart = JSON.stringify(cart);
+    localStorage.setItem("basket", cart);
+
+      }
+    }
+  })
+
+
+
+
+
+
+
+
+
 
 }); //Ready
