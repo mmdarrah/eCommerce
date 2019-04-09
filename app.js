@@ -46,14 +46,14 @@ xhttp.onreadystatechange = function () {
       for (let i = 0; i < cart.length; i++) {
         basketOutput += ` 
                     
-              <tr id="num">
+              <tr id="${cart[i].id}" class="num" >
                 <td><IMG style="width:80px;hight:auto;"src=
                   ${cart[i].image} class="card-img-top"></td>
                 <td>${cart[i].name}</td>
                 <td>${cart[i].price} Kr</td> 
                 <td>${cart[i].quantity} st</td> 
-                <td><input  id="${cart[i].id}" type="number" name="quantity" min="1" max="10"></input></td>
-                <td> <td><a "href="#"><span><i class="fas fa-trash-alt"></i></span></a></td></td>
+                <td><input  id="${cart[i].id}" type="number" name="quantity" min="1" max="10" value="1"></input></td>
+                <td> <a "href="#"><span><i class="fas fa-trash-alt"></i></span></a></td>
               </tr>
        
         
@@ -232,10 +232,34 @@ $(document).ready(function () {
   /* remove items from lista */
 
   $(".table").on("click", "span", function () {
+    let cartFromLocalStorage = localStorage.getItem("basket");
+    let cart = JSON.parse(cartFromLocalStorage);
+    
+    let xItem = $(this).parents('tr').fadeOut(500, function () {
+      /* I need the ID */
 
-    let removItem = $(this).parents('tr').fadeOut(500, function () {
-      $(this).remove();
-      localStorage.removeItem(removItem);
+      removItemId = xItem[0].id;
+      for (let i = 0; i < cart.length; i++) {
+
+        if (cart[i].id == removItemId) {
+
+          cart.splice(i, 1);
+          /* if (cart.length == 0){
+            localStorage.removeItem('basket')
+          } */
+
+
+
+        }}
+      cart = JSON.stringify(cart);
+      localStorage.setItem("basket", cart);
+
+          /* console.log(removItemId); */
+      /* xx = removItem.childNodes.id */
+      /* removId = removItem[0].closest("id")
+      console.log(removId); */
+      /* $(this).remove(); */
+      
     });
   })
 
@@ -262,7 +286,7 @@ $(document).ready(function () {
 
   
   
-  $("#num").on("change",function(){
+  $(".num").on("change",function(){
     let $input = $(this).val()
     /* console.log($input); */
 
@@ -272,6 +296,10 @@ $(document).ready(function () {
     let xId = $(this).children().find("input");
     let clickId = xId[0].id;
     console.log(clickId);
+
+    if (inputValue == 0 || inputValue == "") {
+      inputValue = 1
+    }
 
     for (let i = 0; i < cart.length; i++) {
       
