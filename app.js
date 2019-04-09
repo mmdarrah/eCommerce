@@ -14,9 +14,9 @@ xhttp.onreadystatechange = function () {
 
 
     for (let i = 0; i < items.length; i++) {
-      output += ` <div id="img" class='col-md-4'  >
-        <IMG src= 
-        ${items[i].image} class="card-img-top">
+      output += ` <div id="img"  class='col-md-4'   >
+        <IMG  src= 
+        ${items[i].image} style="width:250px;hight:auto; class="card-img-top" >
         <div class="card-body"  >
         <h5 class="card-title" >${items[i].name}</h5>
         <p class="card-text">Diameter: ${items[i].height}</p>
@@ -62,35 +62,40 @@ xhttp.onreadystatechange = function () {
 
 
       /* Total price start*/
-      if (list == null) {
-        let cartPrice = localStorage.getItem("basket");
-        if (cartPrice != null) {
-          let total = [];
+
+      function totalPrice () {
+        if (list == null) {
+          let cartPrice = localStorage.getItem("basket");
+          if (cartPrice != null) {
+            let total = [];
 
 
-          for (let i = 0; i < cart.length; i++) {
-            /* console.log(cart[i].price); */
-            total.push(cart[i].price);
+            for (let i = 0; i < cart.length; i++) {
+              /* console.log(cart[i].price); */
+              total.push(cart[i].price);
+            }
+            /* console.log(total); */
+
+            var result = total.map(function (x) {
+              return parseInt(x, 10);
+            });
+            /* console.log(result); */
+            const totSum = result.reduce(add);
+            function add(accumulator, a) {
+              return accumulator + a;
+            }
+
+            /* console.log(totSum); */
+            let totResult = "Total price are: " + totSum + " kr"
+            let totalPrice = document.getElementById("total-price");
+            totalPrice.innerHTML = totResult;
           }
-          /* console.log(total); */
-
-          var result = total.map(function (x) {
-            return parseInt(x, 10);
-          });
-          /* console.log(result); */
-          const totSum = result.reduce(add);
-          function add(accumulator, a) {
-            return accumulator + a;
-          }
-
-          /* console.log(totSum); */
-          let totResult = "Total price are: " + totSum + " kr"
-          let totalPrice = document.getElementById("total-price");
-          totalPrice.innerHTML = totResult;
         }
-      }
-            /* Total price end */
 
+      }
+      
+            /* Total price end */
+      totalPrice()
 
 
       let delBtn = document.getElementById("delBtn");
@@ -253,6 +258,7 @@ $(document).ready(function () {
         }}
       cart = JSON.stringify(cart);
       localStorage.setItem("basket", cart);
+      location.reload();
 
           /* console.log(removItemId); */
       /* xx = removItem.childNodes.id */
