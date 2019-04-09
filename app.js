@@ -23,7 +23,7 @@ xhttp.onreadystatechange = function () {
         <p class="card-text">Ursprung: ${items[i].origin}</p>
         <h5 style="display: none;">${
         items[i].id}</h5><input  id="num" type="number" name="quantity" min="1" max="10" value="1"></input>
-        <p class="card-text"><h5>${items[i].price} Kr</h5></p>
+        <p class="card-text"><h5>${items[i].price}</h5></p>
         <button type="button" id="add" class="btn btn-success btn-lg btn-block btn-sm">Köpa</button>
         </div>
         </div>`;
@@ -50,7 +50,8 @@ xhttp.onreadystatechange = function () {
                 <td><IMG style="width:80px;hight:auto;"src=
                   ${cart[i].image} class="card-img-top"></td>
                 <td>${cart[i].name}</td>
-                <td>${cart[i].price}</td> 
+                <td>${cart[i].price} Kr</td> 
+                <td>${cart[i].quantity} st</td> 
                 <td><input  id="num" type="number" name="quantity" min="1" max="10"></input></td>
                 <td> <td><a id="${cart[i].id}"href="#"><span><i class="fas fa-trash-alt"></i></span></a></td></td>
               </tr>
@@ -166,18 +167,28 @@ $(document).ready(function () {
       for (let i = 0; i < cart.length; i++) {
         /* console.log(cart[i].id); */
         if (cart[i].id == clickId) {
-          console.log("test");
+          /* console.log("test"); */
 
           let newQua = +cart[i].quantity + +inputValue
+          let newPrs = cart[i].price * newQua
+          cart.splice(i, 1); 
 
-          console.log(newQua);
+          /* console.log(newPrs); */
 
+          /* this.quantity = newQua */
+          
+          cart.push({
+            
+            name: parent[0].innerText,
+            id: parent[1].innerText,
+            price: newPrs,
+            image: imageSource,
+            quantity: newQua
 
-
-
-
-
-
+          });
+         
+         cart = JSON.stringify(cart);
+         localStorage.setItem("basket", cart);
 
 
         }
@@ -192,7 +203,7 @@ $(document).ready(function () {
         price: parent[2].innerText,
         image: imageSource,
         quantity: inputValue
-        /* quantity: */
+        
       });
       cart = JSON.stringify(cart);
       localStorage.setItem("basket", cart);
