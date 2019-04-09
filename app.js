@@ -117,16 +117,23 @@ $(document).ready(function () {
     let parent = $(this).siblings("h5");
     let image = $(this).parents().find("#img").children("img");
     let imageSource = image[0].currentSrc;
-    console.log(imageSource);
-
-
-
-
-
-
-    
+    /* console.log(imageSource); */
     let allParents = $(this).siblings();
     let inputValue = allParents[4].value;
+
+
+
+    let btnId = $(this).siblings("h5");
+    /* console.log(btnId); */
+    let clickId = allParents[3].innerText;
+        /* console.log(clickId); */
+
+
+
+
+
+
+
 
     if (inputValue == 0 || inputValue == "") {
       inputValue = 1
@@ -155,6 +162,15 @@ $(document).ready(function () {
 
       //if exists then get the item there should be a function in jave script that removes an item
       //from a list and then you should calculate the quanity
+
+      for (let i = 0; i < cart.length; i++) {
+        /* console.log(cart[i].id); */
+        if (cart[i].id == clickId) {
+          console.log("test");
+        }
+
+
+      }
 
 
       cart.push({
