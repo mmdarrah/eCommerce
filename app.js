@@ -50,9 +50,9 @@ xhttp.onreadystatechange = function () {
                   ${cart[i].image} class="card-img-top"></td>
                 <td>${cart[i].name}</td>
                 <td>${cart[i].price * cart[i].quantity} Kr</td> 
-                <td>${cart[i].quantity} st</td> 
+                
                 <td><input  id="${cart[i].id}" type="number" name="quantity" min="1" max="10" value="${cart[i].quantity}"></input></td>
-                <td> <a "href="#"><span><i class="fas fa-trash-alt"></i></span></a></td>
+                <td> <a "href="#"><span><i class="fas fa-trash-alt text-success"></i></span></a></td>
               </tr>
        
         

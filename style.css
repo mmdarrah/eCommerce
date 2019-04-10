@@ -135,15 +135,14 @@ span {
     
 
     #totPrice{
-        display: inline;
-        position: relative;
-        left: 200px;
+        
+        text-align: center;
+        font-size: 1.4em;
     }
     #total-price2{
-        display: inline;
-        position: relative;
-        left: 350px;
-        font-size: 1.2em;
+        
+        text-align: center;
+        font-size: 1.4em;
     }
     
 
@@ -151,5 +150,20 @@ span {
     #alert{
         width: 70%;
         margin: 0 auto;
+        font-size: 1.1em;
     }
+
+    #form{
+    font-size: 1.1em;
+    font-weight: bold;
+    }
+
+    #h1{
+        text-align: center;
+    }
+
+
+    
+
+
 
