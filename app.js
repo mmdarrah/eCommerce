@@ -29,13 +29,13 @@ xhttp.onreadystatechange = function () {
 
     }
 
-
-
-
     let list = document.getElementById("list");
     if (list != null) {
       list.innerHTML = output;
     }
+
+
+
 
     let cart = localStorage.getItem("basket");
     if (cart != null) {
@@ -59,14 +59,48 @@ xhttp.onreadystatechange = function () {
       }
 
                                 
+      let delBtn = document.getElementById("delBtn");
+      let basketList = document.getElementById("basket");
+      if (basketList != null) {
+        basketList.innerHTML = basketOutput;
+        delBtn.removeAttribute("style")
+     
 
-      
+
+      }
+
+      let cart2 = localStorage.getItem("basket");
+      /* console.log(cart2); */
+      if (cart2 != null) {
+        cart2 = JSON.parse(cart2);
+        let basketOutput2 = "";
+        /* console.log(cart2) */;
+
+        for (let i = 0; i < cart2.length; i++) {
+          basketOutput2 += ` 
+                    
+              <tr id="${cart2[i].id}" class="num" >
+                <td><IMG style="width:80px;hight:auto;"src=
+                  ${cart2[i].image} class="card-img-top"></td>
+                <td>${cart2[i].name}</td>
+                <td>${cart2[i].price * cart2[i].quantity} Kr</td> 
+                <td>${cart2[i].quantity} st</td> 
+                
+                
+              </tr>
+       
+        
+        `;}
+
+        /* console.log(basketOutput2); */
 
 
 
-
-
-
+        let basketList2 = document.getElementById("orderInfo");
+        if (basketList2 != null) {
+          basketList2.innerHTML = basketOutput2;
+        }
+      }
 
 
 
@@ -109,12 +143,8 @@ xhttp.onreadystatechange = function () {
       totalPrice()
 
 
-      let delBtn = document.getElementById("delBtn");
-      let basketList = document.getElementById("basket");
-      if (basketList != null) {
-        basketList.innerHTML = basketOutput;
-        delBtn.removeAttribute("style")
-      }
+      
+     
     }
   }
 };
@@ -122,10 +152,16 @@ xhttp.open("GET", "data.json", true);
 xhttp.send();
 /* AJAX end*/
 
+
+
+
+
+
+
+
+
+
 $(document).ready(function () {
-
-
-
 
 
 
