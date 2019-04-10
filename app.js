@@ -339,6 +339,13 @@ $(document).ready(function () {
     });
     $("#alert").removeAttr("style");
     localStorage.removeItem('basket');
+    $("#shopping").css("display","none");
+    $("#delBtn").css("display", "none");
+    $("#form").css("display", "none");
+    /* 
+    $("#form").css("display","none");
+    $("#purchase").css("display","none");
+    $("#purchase").css("display","none"); */
     /* location.reload();  */
   });
   
