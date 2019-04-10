@@ -151,16 +151,13 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.open("GET", "data.json", true);
 xhttp.send();
+
+
 /* AJAX end*/
 
 
 
-
-
-
-
-
-
+/*  jQuery start here */
 
 $(document).ready(function () {
 
@@ -213,8 +210,8 @@ $(document).ready(function () {
       let cart = JSON.parse(cartFromLocalStorage);
      
 
-      //if exists then get the item there should be a function in jave script that removes an item
-      //from a list and then you should calculate the quanity
+      //if exists then get the item 
+      
       let ItemExists = false;
       let curentIndex = 0;
       for (let i = 0; i < cart.length; i++) {
