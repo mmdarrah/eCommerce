@@ -12,7 +12,8 @@ xhttp.onreadystatechange = function () {
 
 
     for (let i = 0; i < items.length; i++) {
-      output += ` <div id="img"  class='col-md-4'   >
+      output += ` <div id="${
+        items[i].id}"  class='col-md-4'   >
         <IMG  src= 
         ${items[i].image} style="width:200px;hight:auto; class="card-img-top" >
         <div class="card-body"  >
@@ -168,9 +169,13 @@ $(document).ready(function () {
   $("button#add").on("click", function () {
 
     let parent = $(this).siblings("h5");
-    let image = $(this).parents().find("#img").children("img");
-    /*  console.log(image); */
-    let imageSource = image[0].currentSrc;
+    let image = $(this).parents();
+    /* let x = image[1].childNodes[1].currentSrc
+
+    
+
+    console.log(x); */
+    let imageSource = image[1].childNodes[1].currentSrc
     /* console.log(imageSource); */
     let allParents = $(this).siblings();
     let inputValue = allParents[4].value;
@@ -325,7 +330,8 @@ $(document).ready(function () {
 
 
   /* Buy btn */
-  $(".buyBtn").click(function () {
+  $(".buyBtn").click(function (e) {
+    e.preventDefault();
     /* alert("test") */
     var x = $("form").serializeArray();
     $.each(x, function (i, field) {
@@ -400,6 +406,6 @@ $(document).ready(function () {
   })
 
 
-
+  
 
 }); //Ready
