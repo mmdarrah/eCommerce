@@ -1,7 +1,5 @@
 
-
-
-
+                     /* AJAX start*/
 
 let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
@@ -60,8 +58,21 @@ xhttp.onreadystatechange = function () {
         `;
       }
 
+                                
+
+      
+
+
+
+
+
+
+
+
+
 
       /* Total price start*/
+
 
       function totalPrice() {
         if (list == null) {
@@ -109,7 +120,7 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.open("GET", "data.json", true);
 xhttp.send();
-
+/* AJAX end*/
 
 $(document).ready(function () {
 
@@ -145,8 +156,7 @@ $(document).ready(function () {
     if (inputValue == 0 || inputValue == "") {
       inputValue = 1
     }
-    //TODO
-    //here you shoud check if the input value is undifined then you set 1
+
 
     /* console.log(parent); */
     /* console.log(parent[2].innerHTML); */
@@ -164,8 +174,7 @@ $(document).ready(function () {
 
 
       let cart = JSON.parse(cartFromLocalStorage);
-      //TODO
-      //here you need to check if the id exist in the list
+     
 
       //if exists then get the item there should be a function in jave script that removes an item
       //from a list and then you should calculate the quanity
@@ -224,6 +233,8 @@ $(document).ready(function () {
       // if the local storage does not contain a cart
 
       //add the item directly
+
+
       let buyBasket = [];
       buyBasket.push({
         name: parent[0].innerText,
@@ -247,7 +258,7 @@ $(document).ready(function () {
     let cart = JSON.parse(cartFromLocalStorage);
 
     let xItem = $(this).parents('tr').fadeOut(500, function () {
-      /* I need the ID */
+      
 
       removItemId = xItem[0].id;
       for (let i = 0; i < cart.length; i++) {
@@ -267,11 +278,7 @@ $(document).ready(function () {
       localStorage.setItem("basket", cart);
       location.reload();
 
-      /* console.log(removItemId); */
-      /* xx = removItem.childNodes.id */
-      /* removId = removItem[0].closest("id")
-      console.log(removId); */
-      /* $(this).remove(); */
+      
 
     });
   })
@@ -288,14 +295,29 @@ $(document).ready(function () {
 
 
   /* Buy btn */
+  $(".buyBtn").click(function () {
+    /* alert("test") */
+    var x = $("form").serializeArray();
+    $.each(x, function (i, field) {
+      $("#name").append(field.name + ": " + field.value + " "+"<br>");
+    });
+    
+  });
 
-  $("#buyBtn").on("click", function () {
 
-    $("#alert").removeAttr("style")
-    localStorage.removeItem('basket')
 
-    location.reload();
-  })
+
+
+
+ /* $("#buyBtn").on("click", function () {
+
+    let $form = $("form").children("input")
+    console.log($form);
+     $("#alert").removeAttr("style") */
+    /* localStorage.removeItem('basket')
+       location.reload(); 
+
+  })*/
 
 
 
@@ -310,11 +332,7 @@ $(document).ready(function () {
     let cartFromLocalStorage = localStorage.getItem("basket");
 
     let cart = JSON.parse(cartFromLocalStorage);
-    //TODO
-    //here you need to check if the id exist in the list
-
-    //if exists then get the item there should be a function in jave script that removes an item
-    //from a list and then you should calculate the quanity
+    
     let ItemExists = false;
     let curentIndex = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -351,61 +369,12 @@ $(document).ready(function () {
       location.reload();
 
 
-      /* console.log(newPrs); */
-
-      /* this.quantity = newQua */
-
-      // cart.push({
-
-      //   name: parent[0].innerText,
-      //   id: parent[1].innerText,
-      //   price: newPrice,
-      //   image: imageSource,
-      //   quantity: newQua
-
-      // });
 
 
 
     }
 
-    // let cartFromLocalStorage = localStorage.getItem("basket");
-    // let cart = JSON.parse(cartFromLocalStorage);
-    // let xId = $(this).children().find("input");
-    // let clickId = xId[0].id;
-    // console.log(clickId);
-
-    // if (inputValue == 0 || inputValue == "") {
-    //   inputValue = 1
-    // }
-
-    // for (let i = 0; i < cart.length; i++) {
-
-    //   if (cart[i].id == clickId) {
-    //     let newQua = +cart[i].quantity + +$input
-    //     let newPrs = cart[i].price * newQua
-
-    //     cart.splice(i, 1);
-
-    //     /* console.log(newPrs); */
-
-    //     /* this.quantity = newQua */
-
-    //     cart.push({
-
-    //       name: parent[0].innerText,
-    //       id: parent[1].innerText,
-    //       price: newPrs,
-    //       image: imageSource,
-    //       quantity: newQua
-
-    //     });
-
-    //     cart = JSON.stringify(cart);
-    //     localStorage.setItem("basket", cart);
-
-    //}
-    //  }
+    
   })
 
 

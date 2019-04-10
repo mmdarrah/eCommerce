@@ -128,7 +128,65 @@ xhttp.send();
   }
 } */
 
+/*  $('.purchase').on('submit', async function (e) {
+        e.preventDefault();
 
+        let form = $(this).serializeArray();
+
+        let obj = {};
+        for (let i = 0; i < form.length; i++) {
+            obj[form[i].name] = form[i].value;
+        }
+
+        let books = await getBooks(),
+            cart = getCart();
+
+        let productsHTML = '';
+        for (let i = 0; i < cart.length; i++) {
+            let book = getBook(books, cart[i].id),
+                totalPrice = (book.price * cart[i].quantity);
+
+            productsHTML += `
+            <div class="confirm-item">
+                <span>
+                    <img src="${book.imgUrl}" class="small-img"/>
+                </span>
+                <span class="confirm-item-title">
+                    ${book.title}
+                </span>
+                <span class="confirm-item-quantity">
+                    ${cart[i].quantity}st
+                </span>
+                <span>
+                    ${totalPrice} kr
+                </span>
+            </div>
+            `;
+        }
+
+        let html = `
+            <div class="confirm">
+                <div>
+                    ${productsHTML}
+                </div>
+                <hr>
+                <div>${obj.name}</div>
+                <div>${obj.telephone}</div>
+                <div>${obj.email}</div>
+                <div>${obj.address}</div>
+                <div>${obj.zip_code}</div>
+                <div>${obj.city}</div>
+            </div>
+
+
+        `;
+
+        $(this).remove();
+        $('.col-75').remove();
+        $('.col-25').remove();
+        localStorage.removeItem('cart');
+        $('.purchase-result').html('<h2>Tack för din beställning!</h2>' + html);
+    }); */
 
 /* jQuery start here */
 
