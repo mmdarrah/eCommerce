@@ -86,9 +86,7 @@ xhttp.onreadystatechange = function () {
                 <td>${cart2[i].price * cart2[i].quantity} Kr</td> 
                 <td>${cart2[i].quantity} st</td> 
                 
-                
               </tr>
-       
         
         `;}
 
@@ -133,7 +131,9 @@ xhttp.onreadystatechange = function () {
             /* console.log(totSum); */
             let totResult = "Total price are: " + totSum + " kr"
             let totalPrice = document.getElementById("total-price");
+            let totalPrice2 = document.getElementById("total-price2");
             totalPrice.innerHTML = totResult;
+            totalPrice2.innerHTML = totResult;
           }
         }
 
@@ -337,10 +337,14 @@ $(document).ready(function () {
     $.each(x, function (i, field) {
       $("#name").append(field.name + ": " + field.value + " "+"<br>");
     });
-    
+    $("#alert").removeAttr("style");
+    localStorage.removeItem('basket');
+    /* location.reload();  */
   });
-
-
+  
+  $("#okay").click(function () {
+    location.reload();
+  })
 
 
 

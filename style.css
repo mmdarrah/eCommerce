@@ -243,6 +243,13 @@ span {
         position: relative;
         left: 200px;
     }
+    #total-price2{
+        display: inline;
+        position: relative;
+        left: 350px;
+        font-size: 1.2em;
+    }
+    
 
 /* 
     #img{
