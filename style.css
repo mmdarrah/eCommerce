@@ -4,115 +4,11 @@ body{
 }
 
 
-
-/* img{
-    width: 30%;
-    height: auto;
-} */
-
-
-/* #chart{
-    background-color: rgb(209, 121, 121);
-    width: 200px;
-    height: 200px;
-} */
-
-/* #list{
-    padding-top: 100px;
-} */
-
-/* .header-img {
-    background-image: url(./image/samuel-zeller-62816-unsplash.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 10vmin;
-    width: 100%;
-    position: relative;
-    z-index: -10;
-  } */
-
   #h1{
       font-size: 3em;
       color: rgb(140, 221, 140);
      
   }
-
-
-  /* 
-  cart-info
-  cart-info__icon
-  
-  */
-
-  /* .cart-info__icon{
-      color: rgb(140, 221, 140);
-      cursor: pointer;
-  } */
-
-  /* .cart-info{
-      border: 0.2rem solid rgb(140, 221, 140);
-      color: rgb(140, 221, 140);
-      border-radius: 0.20rem;
-      padding: 0.3rem 0.6rem;
-      cursor: pointer;
-
-  } */
-
-  /* .cart-info:hover{
-      background-color: rgb(140, 221, 140);
-      border-color: rgb(140, 221, 140);
-      color: #fff;
-  } */
-
-  /* .cart-info:hover .cart-info__icon{
-    color: #fff;
-  } */
-
-
-
-
-/* start of cart*/
- /*  .cart {
-    position: absolute;
-    min-height: 10rem;
-    background: #fff;
-    top: 0;
-    right: 0;
-   
-    background: rgba(140, 221, 140, 0.856);
-    width: 0;
-    overflow: hidden;
-  } */
- /*  .show-cart {
-    width: 18rem;
-    padding: 2rem 1.5rem;
-    z-index: 1;
-    top: 100px;
-  } */
-  
-  /* end of cart */
-
-
-
-  /* cart item */
-  /* .cart-item-remove {
-    color: rgb(140, 221, 140); */
-    /* transition: all 1s ease-in-out; */
-  /* } */
-  /* .cart-item-remove:hover {
-    transform: scale(1.1);
-    color: rgb(140, 221, 140);
-  } */
-  /* #cart-item-price {
-    font-size: 0.8rem;
-  } */
-  /* cart item */
-  /* cart buttons */
-
-
-
-
 
 
 
@@ -250,12 +146,6 @@ span {
         font-size: 1.2em;
     }
     
-
-/* 
-    #img{
-        width:100px;
-        height: auto;
-    } */
 
 
     #alert{

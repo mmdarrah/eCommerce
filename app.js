@@ -185,10 +185,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
     if (inputValue == 0 || inputValue == "") {
       inputValue = 1
     }
@@ -328,8 +324,6 @@ $(document).ready(function () {
 
 
 
-
-
   /* Buy btn */
   $(".buyBtn").click(function () {
     /* alert("test") */
@@ -342,29 +336,12 @@ $(document).ready(function () {
     $("#shopping").css("display","none");
     $("#delBtn").css("display", "none");
     $("#form").css("display", "none");
-    /* 
-    $("#form").css("display","none");
-    $("#purchase").css("display","none");
-    $("#purchase").css("display","none"); */
-    /* location.reload();  */
+   
   });
   
   $("#okay").click(function () {
     location.reload();
   })
-
-
-
-
- /* $("#buyBtn").on("click", function () {
-
-    let $form = $("form").children("input")
-    console.log($form);
-     $("#alert").removeAttr("style") */
-    /* localStorage.removeItem('basket')
-       location.reload(); 
-
-  })*/
 
 
 
@@ -417,18 +394,10 @@ $(document).ready(function () {
 
 
 
-
-
     }
 
     
   })
-
-
-
-
-
-
 
 
 
