@@ -1,3 +1,3 @@
 # eCommerce
 
-https://mmdarrah.github.io/eCommerce/index.html
+https://moedarrah.github.io/eCommerce/
